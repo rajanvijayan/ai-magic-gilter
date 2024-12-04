@@ -15,8 +15,7 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 }
 
 use AIMagicFilter\Admin\SettingsPage;
-use AIMagicFilter\Moderation\CommentModerator;
-use AIMagicFilter\Spam\EmailValidator;
+use AIMagicFilter\MagicFilter\MagicFilter;
 
 // Initialize the plugin
 function ai_magic_filter_init() {
@@ -25,8 +24,6 @@ function ai_magic_filter_init() {
         new SettingsPage();
     }
 
-    // Initialize comment moderation module
-    new CommentModerator();
-    new EmailValidator();
+    new MagicFilter();
 }
 add_action( 'plugins_loaded', 'ai_magic_filter_init' );

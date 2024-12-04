@@ -1,9 +1,9 @@
 <?php 
-namespace AIMagicFilter\Spam;
+namespace AIMagicFilter\MagicFilter;
 
 use AIEngine\AIEngine;
 
-class EmailValidator {
+class MagicFilter {
     public function __construct() {
         add_action('pre_wp_mail', [$this, 'validateAndLogEmail'], 10, 2);
     }
